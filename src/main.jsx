@@ -16,20 +16,24 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "Home",
+        index: true, // Default route
         element: <Home />,
       },
       {
-        path: "Chat",
+        path: "home",
+        element: <Home />,
+      },
+      {
+        path: "chat",
         element: <Chat />,
       },
       {
-        path: "Login",
+        path: "login",
         element: <Login />,
       },
-
     ],
   },
+  
 ]);
 
 createRoot(document.getElementById('root')).render(
