@@ -9,6 +9,10 @@ import Login from './component /Login.jsx';
 import process from 'process';
 window.process = process;
 
+import crypto from 'crypto-browserify';
+window.customCrypto = crypto; // Use a different property name
+
+
 
 const router = createBrowserRouter([
   {
@@ -19,10 +23,12 @@ const router = createBrowserRouter([
         index: true, // Default route
         element: <Home />,
       },
+
       {
-        path: "home",
+        path: "Home",
         element: <Home />,
       },
+   
       {
         path: "chat",
         element: <Chat />,

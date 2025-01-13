@@ -349,3 +349,110 @@ const Chat = () => {
 };
 
 export default Chat;
+
+
+// import React, { useState } from "react";
+
+// const Chat = () => {
+//   const [contacts, setContacts] = useState([
+//     { id: 1, name: "Alice", messages: ["Hi!"] },
+//     { id: 2, name: "Bob", messages: [] },
+//   ]);
+//   const [currentContactId, setCurrentContactId] = useState(1); // Default to Alice
+//   const [newMessage, setNewMessage] = useState("");
+
+//   // Get current contact based on ID
+//   const currentContact = contacts.find(
+//     (contact) => contact.id === currentContactId
+//   );
+
+//   const sendMessage = () => {
+//     if (!newMessage.trim()) return; // Prevent empty messages
+
+//     setContacts((prevContacts) =>
+//       prevContacts.map((contact) =>
+//         contact.id === currentContactId
+//           ? {
+//               ...contact,
+//               messages: [...contact.messages, `You: ${newMessage}`],
+//             }
+//           : contact
+//       )
+//     );
+//     setNewMessage(""); // Clear input field after sending
+//   };
+
+//   const switchChat = (id) => {
+//     setCurrentContactId(id);
+//     setNewMessage(""); // Clear message input when switching chats
+//   };
+
+//   return (
+//     <div style={{ padding: "20px" }}>
+//       <h1>Chat App</h1>
+//       <div style={{ display: "flex", gap: "20px" }}>
+//         {/* Contacts List */}
+//         <div>
+//           <h2>Contacts</h2>
+//           <ul style={{ listStyle: "none", padding: 0 }}>
+//             {contacts.map((contact) => (
+//               <li
+//                 key={contact.id}
+//                 onClick={() => switchChat(contact.id)}
+//                 style={{
+//                   padding: "10px",
+//                   cursor: "pointer",
+//                   backgroundColor:
+//                     contact.id === currentContactId ? "#ccc" : "transparent",
+//                   border: "1px solid #000",
+//                   marginBottom: "5px",
+//                 }}
+//               >
+//                 {contact.name}
+//               </li>
+//             ))}
+//           </ul>
+//         </div>
+
+//         {/* Chat Area */}
+//         <div style={{ flexGrow: 1 }}>
+//           <h2>Chat with {currentContact.name}</h2>
+//           <div
+//             style={{
+//               border: "1px solid #000",
+//               padding: "10px",
+//               height: "300px",
+//               overflowY: "auto",
+//               marginBottom: "10px",
+//             }}
+//           >
+//             {currentContact.messages.length > 0 ? (
+//               currentContact.messages.map((msg, index) => (
+//                 <div key={index}>{msg}</div>
+//               ))
+//             ) : (
+//               <p>No messages yet.</p>
+//             )}
+//           </div>
+
+//           {/* Message Input */}
+//           <div style={{ display: "flex", gap: "10px" }}>
+//             <input
+//               type="text"
+//               value={newMessage}
+//               onChange={(e) => setNewMessage(e.target.value)}
+//               placeholder="Type your message"
+//               style={{ flexGrow: 1, padding: "10px" }}
+//             />
+//             <button onClick={sendMessage} style={{ padding: "10px" }}>
+//               Send
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Chat;
+
