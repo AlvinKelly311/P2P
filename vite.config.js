@@ -53,7 +53,7 @@ export default ({ mode }) => {
       hmr: {
         host: 'localhost',
         port: 5173, // Match your development environment
-        protocol: 'ws', // Use 'wss' for secure connections
+        protocol: 'ws', // Use 'wss' for secure connections if needed
       },
     },
     plugins: [react()],
@@ -88,14 +88,12 @@ export default ({ mode }) => {
       },
     },
     build: {
-      sourcemap: true, // Ensure source maps are enabled
+      sourcemap: true, // Enable source maps for easier debugging
       rollupOptions: {
         output: {
           manualChunks: undefined, // Customize chunk splitting if needed
         },
       },
     },
-  
-    
   });
 };
