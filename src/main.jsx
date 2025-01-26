@@ -6,13 +6,11 @@ import App from './App.jsx';
 import Home from './component /Home.jsx';
 import Chat from './component /Chat.jsx';
 import Login from './component /Login.jsx';
-import process from 'process';
-window.process = process;
+import process from 'process'; // Import process
 
+window.process = process; // Assign process to window
 import crypto from 'crypto-browserify';
 window.customCrypto = crypto; // Use a different property name
-
-
 
 const router = createBrowserRouter([
   {
@@ -20,15 +18,13 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        index: true, // Default route
+        index: true,
         element: <Home />,
       },
-
       {
         path: "Home",
         element: <Home />,
       },
-   
       {
         path: "chat",
         element: <Chat />,
@@ -39,7 +35,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-  
 ]);
 
 createRoot(document.getElementById('root')).render(
